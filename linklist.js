@@ -181,6 +181,16 @@ class LinkedList {
     }
     console.log(slow.value, "middle");
   }
+  countOccurenceOfKey(key) {
+    let keyValue = key;
+    let count = 0;
+    let curr = this.head;
+    while (curr !== null) {
+      curr.value == keyValue && count++;
+      curr = curr.next;
+    }
+    console.log(key, ":", count);
+  }
 
   print() {
     let output = "";
@@ -198,11 +208,13 @@ class LinkedList {
 
 const list = new LinkedList();
 // list.add(11);
-list.add(23);
-list.add(32);
+list.add(3);
+list.add(9);
 list.add(13);
-list.add(25);
-list.add(36);
+list.add(5);
+list.add(6);
+list.add(3);
+list.add(3)
 list.print();
 // list.addAtBegning(10);
 // list.print();
@@ -222,6 +234,6 @@ list.print();
 // list.print();
 // list.deleteAtSpecificPosition(6);
 // list.print();
-// list.deleteEveryKthNode(2);
-list.findMiddleNodes();
-list.print();
+// list.deleteEveryKthNode(2);                                              pending
+// list.findMiddleNodes();
+list.countOccurenceOfKey(3);
