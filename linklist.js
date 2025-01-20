@@ -192,6 +192,16 @@ class LinkedList {
     console.log(key, ":", count);
   }
 
+  pairWiseSwap() {
+    let curr = this.head;
+    while (curr != null && curr.next != null) {
+      let temp = curr.value;
+      curr.value = curr.next.value;
+      curr.next.value = temp;
+      curr = curr.next.next;
+    }
+  }
+
   print() {
     let output = "";
     let currNode = this.head;
@@ -204,6 +214,10 @@ class LinkedList {
     }
     console.log(output);
   }
+
+  removeDuplicatesInSortedLinklist() {
+    console.log("Removing duplicate");
+  }
 }
 
 const list = new LinkedList();
@@ -214,7 +228,8 @@ list.add(13);
 list.add(5);
 list.add(6);
 list.add(3);
-list.add(3)
+list.add(3);
+list.add(100);
 list.print();
 // list.addAtBegning(10);
 // list.print();
@@ -236,4 +251,7 @@ list.print();
 // list.print();
 // list.deleteEveryKthNode(2);                                              pending
 // list.findMiddleNodes();
-list.countOccurenceOfKey(3);
+// list.countOccurenceOfKey(3);
+// list.pairWiseSwap();
+list.removeDuplicatesInSortedLinklist();
+list.print();
